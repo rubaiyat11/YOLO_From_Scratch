@@ -1,13 +1,18 @@
 from ultralytics import YOLO
-import torch
 
-print("Pytorch:", torch.__version__)
 
 model = YOLO("yolo11n.pt")
 
-print(model)
 
-print(type(model))
+net = model.model
 
-print(model.model)
+print(type(net))
 
+print("\nFirst module:\n")
+print(net.model[0])
+
+print("\nSecond module:\n")
+print(net.model[1])
+
+print("\nThird module:\n")
+print(net.model[2])
