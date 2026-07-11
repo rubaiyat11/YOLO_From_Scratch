@@ -1,18 +1,21 @@
 from ultralytics import YOLO
-
+import torch
 
 model = YOLO("yolo11n.pt")
-
-
 net = model.model
 
-print(type(net))
+x = torch.randn(1, 3, 640, 640)
 
-print("\nFirst module:\n")
-print(net.model[0])
+print(f"Input Shape: {x.shape}")
 
-print("\nSecond module:\n")
-print(net.model[1])
+x = net.model[0](x)
 
-print("\nThird module:\n")
-print(net.model[2])
+print(f"After layer 0: {x.shape}")
+
+x = net.model[1](x)
+
+print(f"After layer 1: {x.shape}")
+
+x = net.model[2](x)
+
+print(f"After layer 2: {x.shape}")
