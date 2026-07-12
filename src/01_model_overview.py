@@ -19,3 +19,7 @@ print(f"After layer 1: {x.shape}")
 x = net.model[2](x)
 
 print(f"After layer 2: {x.shape}")
+
+x = net.model[3](x)
+
+print(f"After layer 3: {x.shape}")
