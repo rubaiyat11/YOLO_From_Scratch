@@ -1,25 +1,20 @@
 from ultralytics import YOLO
 import torch
+import matplotlib.pyplot as plt
 
 model = YOLO("yolo11n.pt")
 net = model.model
 
+# Fake image
 x = torch.randn(1, 3, 640, 640)
 
-print(f"Input Shape: {x.shape}")
-
+# First convolution
 x = net.model[0](x)
 
-print(f"After layer 0: {x.shape}")
+print(x.shape)
 
-x = net.model[1](x)
-
-print(f"After layer 1: {x.shape}")
-
-x = net.model[2](x)
-
-print(f"After layer 2: {x.shape}")
-
-x = net.model[3](x)
-
-print(f"After layer 3: {x.shape}")
+# Show first feature map
+plt.imshow(x[0, 0].detach().numpy(), cmap="gray")
+plt.title("Feature Map 0")
+plt.axis("off")
+plt.show()
