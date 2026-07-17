@@ -25,7 +25,7 @@ This repository documents my journey from YOLO theory to building, training, and
 - [x] YOLO Core Theory
 
 ### Phase 2 — YOLO Under the Hood
-- [ ] Model Overview
+- [x] Model Overview
 - [ ] Backbone
 - [ ] Neck
 - [ ] Detection Head
