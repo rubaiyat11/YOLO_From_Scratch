@@ -41,3 +41,7 @@ for idx, layer in enumerate(net.model):
             f"{w.shape[1]} -> {w.shape[0]} channels | "
             f"{w.shape[2]}x{w.shape[3]} kernel"
         )
+
+
+print("\n========== Layer 2 ==========\n")
+print(net.model[2])
